@@ -1,0 +1,11 @@
+<%= form_for @category, url: {action: "create"} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :allotment %>
+  <%= f.text_field :allotment %>
+  <%= f.label :period %>
+  <%= select_tag :period, options_from_collection_for_select(Category::PERIOD_OPTIONS) %>
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date %>
+  <%= f.submit "Create" %>
+<% end %>

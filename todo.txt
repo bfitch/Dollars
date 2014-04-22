@@ -1,0 +1,31 @@
+1. This is bad:
+
+Started GET "/transactions/" for 127.0.0.1 at 2014-04-21 22:02:21 -0400
+Processing by TransactionsController#index as HTML
+  User Load (0.2ms)  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Transaction Load (0.3ms)  SELECT "transactions".* FROM "transactions"  WHERE "transactions"."user_id" = 1  ORDER BY date DESC
+  Payee Load (0.1ms)  SELECT  "payees".* FROM "payees"  WHERE "payees"."id" = ? LIMIT 1  [["id", 2]]
+  Category Load (0.1ms)  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  Payee Load (0.1ms)  SELECT  "payees".* FROM "payees"  WHERE "payees"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "payees".* FROM "payees"  WHERE "payees"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "payees".* FROM "payees"  WHERE "payees"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "payees".* FROM "payees"  WHERE "payees"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "payees".* FROM "payees"  WHERE "payees"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "payees".* FROM "payees"  WHERE "payees"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "payees".* FROM "payees"  WHERE "payees"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "payees".* FROM "payees"  WHERE "payees"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "payees".* FROM "payees"  WHERE "payees"."id" = ? LIMIT 1  [["id", 1]]
+  CACHE (0.0ms)  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered transactions/index.html.erb within layouts/application (11.0ms)
+  Rendered application/_navigation.html.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 1.0ms)
+
+

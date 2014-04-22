@@ -1,0 +1,21 @@
+<table class="table-minimal">
+  <thead>
+    <tr>
+
+      <th>Name</th>
+      <th>Allotment</th>
+      <th>Period</th>
+      <th>Start Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |c| %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= c.allotment %></td>
+        <td><%= c.period %></td>
+        <td><%= c.start_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

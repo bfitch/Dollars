@@ -1,0 +1,11 @@
+<%= form_for @transaction, url: {action: "create"} do |f| %>
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+  <%= f.label :payee %>
+  <input id="payee_name" class="typeahead" name="transaction[payee][name]" type="text" autocomplete="off" />
+  <%= f.label :date %>
+  <%= f.date_field :date, id: "date_of_transaction" %>
+  <%= f.label :categories %>
+  <%= select_tag :category_id, options_from_collection_for_select(@categories, "id", "name"), name: "transaction[category_id]" %>
+  <%= f.submit "Create" %>
+<% end %>
