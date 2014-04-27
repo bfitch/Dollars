@@ -3,11 +3,12 @@ require_relative '../service_objects/transaction_form'
 class TransactionsController < ApplicationController
   def new
     @transaction = Transaction.new
-    @categories  = Category.by_user(current_user)
+    @categories  = categories
   end
 
   def create
     @transaction = TransactionForm.new(sanitized_params)
+    @categories  = categories
 
     if @transaction.save
       redirect_to action: "index", status: 200
@@ -21,6 +22,10 @@ class TransactionsController < ApplicationController
   end
 
   private
+
+  def categories
+    @categories  ||= Category.by_user(current_user)
+  end
 
   def sanitized_params
     params.permit(transaction: [:amount, :category_id, :date, payee: [:id, :name]])

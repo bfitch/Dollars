@@ -14,7 +14,7 @@
         <td><%= c.name %></td>
         <td><%= c.allotment %></td>
         <td><%= c.period %></td>
-        <td><%= c.start_date %></td>
+        <td><%= format_date(c.start_date) %></td>
       </tr>
     <% end %>
   </tbody>

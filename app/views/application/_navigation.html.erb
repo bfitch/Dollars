@@ -1,14 +1,14 @@
 <header class="navigation">
     <div class="menu-wrapper">
       <a href="javascript:void(0)" class="logo">
-        <img src="https://raw.github.com/Magnus-G/Random/master/placeholder_logo_1.png" alt="">
+        <img src="http://www.decalsplanet.com/img_b/vinyl-decal-sticker-7191.jpg" alt="">
       </a>
       <p class="navigation-menu-button" id="js-mobile-menu">MENU</p>
       <div class="nav">
         <ul id="navigation-menu">
-          <li><a href="javascript:void(0)">Products</a></li>
-          <li><a href="javascript:void(0)">About Us</a></li>
-          <li><a href="javascript:void(0)">Contact</a></li>
+          <li><%= link_to "Transactions", transactions_path %></li>
+          <li><%= link_to "Categories", categories_path %></li>
+          <li><%= link_to "+", new_transaction_path %></li>
         </ul>
       </div>
     </div>

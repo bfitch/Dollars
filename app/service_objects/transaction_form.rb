@@ -11,6 +11,10 @@ class TransactionForm
   attribute :date, Date
   attribute :payee, Hash[Symbol => String]
 
+  validates :amount, format: { with: /\d+\.\d{2}/,
+    message: "must be integers in currency format" }
+  validates :category_id, :user_id, :date, :payee, presence: true
+
   def persisted?
     false
   end

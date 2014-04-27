@@ -13,7 +13,7 @@ $(document).ready(function() {
   function callback(data){};
 
   function onSelect(query, callback) {
-    var deferred = $.get('payees/autocomplete?q=' + query);
+    var deferred = $.get('/payees/autocomplete?q=' + query);
     deferred.success(function(data){
       callback(data);
     });

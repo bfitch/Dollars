@@ -39,4 +39,8 @@ p.flash-notice {
   @include flash($notice-color);
 }
 
+.field_with_errors > input {
+  background-color: $error-color;
+}
+
 
