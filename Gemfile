@@ -21,6 +21,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'virtus'
+gem 'ice_cube'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
