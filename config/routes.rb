@@ -6,6 +6,7 @@ Dollars::Application.routes.draw do
   resources :transactions
 
   get 'payees/autocomplete' => 'payees#autocomplete'
+  get 'budget'              => 'budgets#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
