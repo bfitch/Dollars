@@ -18,10 +18,10 @@ class Category < ActiveRecord::Base
   end
 
   def spent_this_period
-    transactions.total_spent_by_period(current_period.as_range)
+    transactions.total_spent_by_period(current_period)
   end
 
   def current_period
-    Schedule.new(self).current_period
+    CurrentPeriod.new(period).as_range
   end
 end

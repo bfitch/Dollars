@@ -3,8 +3,8 @@ class Transaction < ActiveRecord::Base
   belongs_to :user
   belongs_to :payee
 
-  def self.total_spent_by_period(period)
-    by_date_range(period).total
+  def self.total_spent_by_period(period_range)
+    by_date_range(period_range).total
   end
 
   def self.total

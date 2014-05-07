@@ -1,6 +1,6 @@
-class CurrentPeriod < Struct.new(:period, :schedule)
+class CurrentPeriod < Struct.new(:period)
   def dates
-    [start.to_date, stop.to_date]
+    [start, stop]
   end
 
   def as_range
@@ -9,21 +9,20 @@ class CurrentPeriod < Struct.new(:period, :schedule)
 
   private
 
-  def start
-    Occurence.new schedule.previous_occurrence(today)
-  end
-
   def stop
-    Occurence.new schedule.next_occurrence(today)
+    @stop ||= Date.current
   end
   
-  def today
-    @today ||= Time.now
-  end
-
-  class Occurence < Struct.new(:time)
-    def to_date
-      Date.parse(time.to_s)
+  def start
+    case period
+    when 'weekly'
+      stop.beginning_of_week
+    when 'monthly'
+      stop.beginning_of_month
+    # when 'bi-monthly'
+    #   [:monthly, 2]
+    when 'yearly'
+      stop.beginning_of_year
     end
   end
 end
