@@ -1,7 +1,9 @@
 class Schedule < Struct.new(:category)
   def current_period
-    CurrentPeriod.new(period, schedule)
+    CurrentPeriod.new(schedule)
   end
+
+  private
 
   def schedule
     return @schedule if @schedule
@@ -10,10 +12,8 @@ class Schedule < Struct.new(:category)
     @schedule
   end
 
-  private
-
   def rule
-    @rule ||= RuleFactory.new(period).call
+    @rule ||= RuleFactory.new(period, start_date).call
   end
 
   def start_date

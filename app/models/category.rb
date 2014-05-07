@@ -22,6 +22,10 @@ class Category < ActiveRecord::Base
   end
 
   def current_period
-    CurrentPeriod.new(period).as_range
+    schedule.current_period.as_range
+  end
+
+  def schedule
+    @schedule ||= Schedule.new(self)
   end
 end

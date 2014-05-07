@@ -7,6 +7,7 @@
       <th>Allotment</th>
       <th>Spent</th>
       <th>Amount Left</th>
+      <th>Period</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,7 @@
         <td><%= number_to_currency(c.allotment) %></td>
         <td><%= number_to_currency(c.spent_this_period) %></td>
         <td><%= number_to_currency(c.amount_left) %></td>
+        <td><%= display_period_dates(c.current_period) %></td>
       </tr>
     <% end %>
   </tbody>

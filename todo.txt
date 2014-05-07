@@ -32,3 +32,6 @@ Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 1.0ms)
 
 3. make date range start at the beginning or every week, month, year
 
+4. validate beginning of year:
+  Date.today == Date.today.beginning_of_year
+
