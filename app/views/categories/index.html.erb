@@ -1,7 +1,6 @@
 <table class="table-minimal">
   <thead>
     <tr>
-
       <th>Name</th>
       <th>Allotment</th>
       <th>Period</th>
@@ -12,7 +11,7 @@
     <% @categories.each do |c| %>
       <tr>
         <td><%= c.name %></td>
-        <td><%= c.allotment %></td>
+        <td>$<%= c.allotment %></td>
         <td><%= c.period %></td>
         <td><%= format_date(c.start_date) %></td>
       </tr>

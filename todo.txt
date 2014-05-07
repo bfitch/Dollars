@@ -28,4 +28,7 @@ Processing by TransactionsController#index as HTML
   Rendered application/_navigation.html.erb (0.0ms)
 Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 1.0ms)
 
+2. Fix floating point amount validation in FormObject
+
+3. make date range start at the beginning or every week, month, year
 

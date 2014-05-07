@@ -1,1 +1,22 @@
 <h1>Budget</h1>
+
+<table class="table-minimal">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Allotment</th>
+      <th>Spent</th>
+      <th>Amount Left</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @budget.categories.each do |c| %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= number_to_currency(c.allotment) %></td>
+        <td><%= number_to_currency(c.spent_this_period) %></td>
+        <td><%= number_to_currency(c.amount_left) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
