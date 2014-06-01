@@ -18,13 +18,17 @@ class TransactionsController < ApplicationController
   end
 
   def index
-    @transactions = Transaction.by_user(current_user).ordered_by_latest_date
+    @transactions = Transaction.by_account(account).ordered_by_latest_date
   end
 
   private
 
   def categories
-    @categories  ||= Category.by_user(current_user)
+    @categories  ||= Category.by_account(account)
+  end
+
+  def account
+    current_user.account
   end
 
   def sanitized_params

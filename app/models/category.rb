@@ -9,6 +9,10 @@ class Category < ActiveRecord::Base
     %w{yearly yearly},
   ].freeze
 
+  def self.by_account(account)
+    where(user_id: account.users.map(&:id))
+  end
+
   def self.by_user(user)
     where(user: user)
   end
