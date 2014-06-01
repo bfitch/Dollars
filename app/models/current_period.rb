@@ -14,7 +14,7 @@ class CurrentPeriod < Struct.new(:schedule)
   end
 
   def stop
-    Occurence.new today
+    Occurence.new schedule.next_occurrence(today)
   end
   
   def today

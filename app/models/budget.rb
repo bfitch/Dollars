@@ -6,9 +6,6 @@ class Budget
     @category_class = category_class
   end
 
-  def build
-  end
-
   def categories
     category_class.by_user(user)
   end
