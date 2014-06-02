@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <!-- <p class="notice flash-notice"><%= notice %></p> -->
-  <!-- <p class="alert flash-error"><%= alert %></p> -->
+  <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+  <% end -%>
   
   <% if user_signed_in? %>
     <%= render "navigation" %>

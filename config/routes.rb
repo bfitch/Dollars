@@ -10,6 +10,9 @@ Dollars::Application.routes.draw do
 
   get 'payees/autocomplete' => 'payees#autocomplete'
   get 'budget'              => 'budgets#show'
+  get 'accounts/new'        => 'accounts#new'
+  get 'accounts/create'     => 'accounts#create'
+  post 'accounts/invite'    => 'accounts#invite'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

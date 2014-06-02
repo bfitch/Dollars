@@ -1,11 +1,12 @@
 class AccountInvitationMailer < ActionMailer::Base
+  default from: "donotreply@dollarsapp.io"
+
   def invite(invitation)
     @presenter = AccountInvitationPresenter.new(invitation)
-    subject    = "Invitation to join your account"
+    subject    = "Invitation to link your Dollars account"
 
     mail(
       to:      invitation.invitee_email,
-      from:    invitation.inviter_email,
       subject: subject)
   end
 end

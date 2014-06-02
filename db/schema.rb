@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514013647) do
+ActiveRecord::Schema.define(version: 20140602033937) do
+
+  create_table "account_invitations", force: true do |t|
+    t.string   "inviter_email"
+    t.string   "invitee_email"
+    t.string   "invite_code"
+    t.datetime "sent_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "accounts", force: true do |t|
     t.datetime "created_at"
