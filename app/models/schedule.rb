@@ -13,6 +13,7 @@ class Schedule < Struct.new(:category)
   end
 
   def rule
+    # pass in entire category object here
     @rule ||= RuleFactory.new(period, start_date).call
   end
 
